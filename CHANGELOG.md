@@ -1,12 +1,18 @@
-# quantaa.net Changelog
+# Quantaa.net Changelog
 
-## v0.1.0-build001 — Local baseline
-- Clean Quantaa website repo created from existing Hermes-built HTML and logo.
-- Created real repo and Hermes sandbox worktree.
-- Status: local baseline, not pushed, not deployed from this clean repo yet.
+## v0.2.1-build001
 
-## Changelog Rules
-- Every sandbox proposal gets a build number.
-- Every accepted real repo commit must mention the version/build number.
-- Push/deploy is tracked separately from commit approval.
-- Rejected builds should remain documented as rejected, not silently reused.
+### Added
+- Real HTML/CSS homepage rebuilt to follow approved Quantaa style-guide image.
+- CSS-generated right-side Q hero artwork.
+- Star/network background treatment.
+- Quantaa.net wordmark in header.
+- Dark neon card and stats layout.
+
+### Fixed
+- Removed fake screenshot-as-background approach.
+- Removed double-vision caused by overlaying HTML on top of a generated webpage mockup.
+
+### Notes
+- This is a sandbox review build.
+- Next step is visual tuning after browser review.

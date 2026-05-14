@@ -1,48 +1,30 @@
-# quantaa.net Version
+# Quantaa.net Website Version
 
-Site: quantaa.net
-Current approved version: v0.1.0-build001
-Current sandbox build: none
-Next planned sandbox build: v0.2.0-build001
-Last approved/base commit: 238fe6f
-Deployment status: local clean baseline, not pushed yet
-GitHub remote: git@github.com:mslepikas/quantaa-net.git
+## Current Version
 
-## Versioning Convention
+**v0.2.1-build001**
 
-Format:
+## Status
 
-    SITE vMAJOR.MINOR.PATCH-buildNN
+Serious sandbox homepage implementation.
 
-Examples:
+## Summary
 
-    quantaa.net v0.2.0-build001
+This version rebuilds the Quantaa.net homepage as real HTML/CSS following the approved dark futuristic style-guide direction.
 
-Meaning:
+## Key Design Targets
 
-    MAJOR = major redesign, product direction change, or site architecture change
-    MINOR = new page, new product section, new workflow, or meaningful content block
-    PATCH = typo, small copy edit, link fix, image fix, or layout tweak
-    buildNN = human approval/build order number for this site
-
-## Approval Rules
-
-Sandbox work can be proposed by Hermes/Q.
-
-Real repo commits require:
-
-1. git status review
-2. git diff review
-3. Danno review
-4. user approval
-
-Public push/deploy requires a separate explicit approval.
-
-Example approval phrases:
-
-    APPROVE: quantaa.net v0.2.0-build001 for real repo commit only
-    APPROVE: push quantaa.net v0.2.0-build001 to GitHub for Cloudflare deploy
-
-## Domain / Hosting Note
-
-Domain transfer expected 2026-05-16. Cloudflare is DNS/host provider.
+- Black futuristic AI/cyber background
+- Quantaa.net wordmark in header
+- Blue/purple neon accent system
+- Large right-side Q artwork built in CSS
+- Star/network background feel
+- Left-side hero message:
+  - Compute.
+  - Intelligence.
+  - Innovation.
+- About Quantaa section
+- Three solution cards
+- Metrics strip
+- No screenshot/mockup background
+- No double-vision layout
