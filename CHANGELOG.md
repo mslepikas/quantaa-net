@@ -1,18 +1,20 @@
 # Quantaa.net Changelog
 
-## v0.2.1-build001
+## v0.3.0-build001
 
 ### Added
-- Real HTML/CSS homepage rebuilt to follow approved Quantaa style-guide image.
-- CSS-generated right-side Q hero artwork.
-- Star/network background treatment.
-- Quantaa.net wordmark in header.
-- Dark neon card and stats layout.
+- Clean professional homepage rebuild.
+- Approved Quantaa style-guide background treatment.
+- Approved Quantaa wordmark.
+- Approved service icons for Advanced Compute, Intelligent Networking, and AI Innovation.
+- Real header navigation.
+- Real content sections for About, Services, Technology, and Contact.
+- Centered footer.
 
-### Fixed
-- Removed fake screenshot-as-background approach.
-- Removed double-vision caused by overlaying HTML on top of a generated webpage mockup.
+### Changed
+- Replaced experimental screenshot/hotspot approach with a real HTML/CSS webpage.
+- Increased service card text size for readability.
+- Removed unapproved Q hero artwork from the hero section.
 
 ### Notes
-- This is a sandbox review build.
-- Next step is visual tuning after browser review.
+- This is the committed sandbox build before any GitHub or Cloudflare deployment.

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantaa.net - AI Tech Innovation in Compute & Networking</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600&family=Source+Code+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #ffffff;
+            --color-text: #061b31;
+            --color-heading: #061b31;
+            --color-accent: #533afd;
+            --color-accent-hover: #4434d4;
+            --color-border: #e5edf5;
+            --color-card-bg: #ffffff;
+            --color-shadow-blue: rgba(50,50,93,0.25);
+            --color-shadow-black: rgba(0,0,0,0.1);
+            --color-success: #15be53;
+            --color-warning: #9b6829;
+            --color-cta: #533afd;
+            --color-cta-hover: #4434d4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans 3', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            color: var(--color-text);
+            background: var(--color-bg);
+            line-height: 1.4;
+        }
+
+        a {
+            color: var(--color-accent);
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: var(--color-accent-hover);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            padding: 24px 0;
+            border-bottom: 1px solid var(--color-border);
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 100;
+            backdrop-filter: blur(12px);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--color-heading);
+        }
+
+        .logo span {
+            color: var(--color-accent);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 32px;
+        }
+
+        nav ul li a {
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--color-heading);
+        }
+
+        .cta-button {
+            background: var(--color-cta);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 400;
+            transition: background 0.2s;
+        }
+
+        .cta-button:hover {
+            background: var(--color-cta-hover);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 140px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background:
+                linear-gradient(rgba(3, 5, 10, 0.62), rgba(3, 5, 10, 0.88)),
+                url("public/images/backgrounds/quantaa-hero-background.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 300;
+            line-height: 1.03;
+            letter-spacing: -1.4px;
+            margin-bottom: 24px;
+            color: var(--color-heading);
+        }
+
+        .hero p {
+            font-size: 1.13rem;
+            font-weight: 300;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: #64748d;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--color-heading);
+            letter-spacing: -0.64px;
+        }
+
+        .section-subtitle {
+            font-size: 1.13rem;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+            color: #64748d;
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: var(--color-card-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 4px;
+            padding: 30px;
+            box-shadow: rgba(50,50,93,0.25) 0px 30px 45px -30px, rgba(0,0,0,0.1) 0px 18px 36px -18px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: rgba(50,50,93,0.35) 0px 45px 60px -30px, rgba(0,0,0,0.15) 0px 24px 48px -18px;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 16px;
+            color: var(--color-heading);
+            letter-spacing: -0.64px;
+        }
+
+        .card p {
+            color: #64748d;
+            margin-bottom: 24px;
+        }
+
+        /* Features Section */
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 32px;
+            margin-top: 40px;
+        }
+
+        .feature {
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--color-accent);
+        }
+
+        .feature h3 {
+            font-size: 1.38rem;
+            font-weight: 300;
+            margin-bottom: 16px;
+            color: var(--color-heading);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--color-heading);
+            color: white;
+            padding: 60px 0 30px;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h4 {
+            font-size: 1.13rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column ul li a {
+            color: #b8c0c8;
+        }
+
+        .footer-column ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #b8c0c8;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            nav ul {
+                display: none;
+            }
+            
+            .hero {
+                padding: 60px 0;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo"><img src="public/images/quantaa-logo-main.png" alt="Quantaa.net logo"></div>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#technology">Technology</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" class="cta-button">Get Started</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>AI Innovation in Compute & Networking</h1>
+            <p>Quantaa delivers cutting-edge artificial intelligence solutions powered by advanced computing infrastructure and intelligent networking technologies that transform how businesses approach data and intelligence.</p>
+            <a href="#services" class="cta-button">Explore Solutions</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Quantaa</h2>
+            <p class="section-subtitle">We bridge the gap between artificial intelligence and computational infrastructure to create powerful solutions for the modern enterprise.</p>
+            
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>Our Vision</h3>
+                    <p>To create an intelligent future where AI solutions are seamlessly integrated with robust computing infrastructure and intelligent networking to unlock unprecedented potential for businesses worldwide.</p>
+                </div>
+                <div class="card">
+                    <h3>Our Mission</h3>
+                    <p>Empower organizations through innovative AI technologies that leverage advanced computing resources and sophisticated networking to deliver unprecedented insights and capabilities.</p>
+                </div>
+                <div class="card">
+                    <h3>Our Values</h3>
+                    <p>Excellence, Innovation, Integrity, Collaboration, and Customer Success drive everything we do at Quantaa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" style="background: #f8f9fc;">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-subtitle">Comprehensive AI solutions designed to optimize computing resources and enhance networking capabilities for businesses.</p>
+            
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>AI Solutions</h3>
+                    <p>Custom machine learning platforms, predictive analytics, and AI-as-a-Service solutions that drive business intelligence and automation.</p>
+                </div>
+                <div class="card">
+                    <h3>Compute Infrastructure</h3>
+                    <p>Scalable cloud computing platforms, edge processing, and high-performance computing solutions optimized for AI workloads.</p>
+                </div>
+                <div class="card">
+                    <h3>Networking Solutions</h3>
+                    <p>Intelligent networking technologies that connect AI systems to compute resources for optimal performance and data flow.</p>
+                </div>
+                <div class="card">
+                    <h3>Custom Development</h3>
+                    <p>End-to-end development of specialized AI applications and platform integrations tailored to specific business needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="technology">
+        <div class="container">
+            <h2 class="section-title">Technology</h2>
+            <p class="section-subtitle">Our technological approach combines deep AI expertise with advanced computing and networking infrastructure.</p>
+            
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">🧠</div>
+                    <h3>AI Intelligence</h3>
+                    <p>Advanced machine learning models that learn and adapt to optimize performance over time.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <h3>High Performance</h3>
+                    <p>Compute infrastructure optimized for machine learning tasks with ultra-low latency.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🌐</div>
+                    <h3>Smart Networking</h3>
+                    <p>Intelligent network architectures that dynamically adapt to AI compute demands.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>Quantaa.net</h4>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#technology">Technology</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Case Studies</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">API Reference</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>info@quantaa.net</li>
+                        <li>+1 (555) 123-4567</li>
+                        <li>San Francisco, CA</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 Quantaa.net. All rights reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

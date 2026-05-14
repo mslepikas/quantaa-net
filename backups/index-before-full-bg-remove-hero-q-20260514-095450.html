@@ -40,14 +40,14 @@
         linear-gradient(180deg, #010309 0%, #050811 52%, #02040a 100%);
       background-size:
         auto,
-        cover,
+        76% auto,
         auto,
         auto,
         auto,
         auto;
       background-position:
         center,
-        center top,
+        92% -80px,
         center,
         center,
         center,
@@ -156,15 +156,40 @@
       align-items: center;
       overflow: hidden;
       border-bottom: 1px solid rgba(255,255,255,0.08);
-      background: linear-gradient(90deg, rgba(2,4,10,0.72), rgba(2,4,10,0.34));
     }
 
     .hero::before {
-      content: none;
+      content: "";
+      position: absolute;
+      right: -140px;
+      top: 80px;
+      width: 560px;
+      height: 560px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at center, transparent 0 38%, rgba(0,119,255,0.15) 39% 41%, transparent 42%),
+        radial-gradient(circle at center, transparent 0 54%, rgba(154,43,255,0.13) 55% 57%, transparent 58%),
+        radial-gradient(circle at center, rgba(0,212,255,0.16), transparent 62%);
+      box-shadow:
+        0 0 80px rgba(0,119,255,0.16),
+        0 0 120px rgba(154,43,255,0.12);
+      opacity: 0.85;
+      pointer-events: none;
     }
 
     .hero::after {
-      content: none;
+      content: "";
+      position: absolute;
+      right: 120px;
+      top: 170px;
+      width: 340px;
+      height: 220px;
+      background:
+        linear-gradient(32deg, transparent 0 48%, rgba(0,212,255,0.20) 49%, transparent 50%),
+        linear-gradient(118deg, transparent 0 50%, rgba(154,43,255,0.18) 51%, transparent 52%);
+      background-size: 110px 110px, 140px 140px;
+      opacity: 0.45;
+      pointer-events: none;
     }
 
     .hero-grid {
@@ -289,7 +314,7 @@
     .lead {
       color: var(--muted);
       line-height: 1.75;
-      font-size: 18px;
+      font-size: 17px;
       margin: 0;
     }
 
@@ -320,17 +345,16 @@
     }
 
     .card h3 {
-      margin: 0 0 16px;
-      font-size: 27px;
+      margin: 0 0 14px;
+      font-size: 20px;
       font-weight: 500;
-      letter-spacing: 0.02em;
     }
 
     .card p {
       margin: 0;
-      color: rgba(255,255,255,0.72);
-      line-height: 1.75;
-      font-size: 17px;
+      color: rgba(255,255,255,0.66);
+      line-height: 1.7;
+      font-size: 15px;
     }
 
     .split {

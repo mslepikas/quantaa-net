@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quantaa.net | Compute Intelligence Innovation</title>
+  <meta name="description" content="Quantaa.net builds AI, compute, and intelligent networking systems for modern businesses.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: #02040a;
+      color: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    .landing {
+      min-height: 100vh;
+      background-image: url("public/images/quantaa-v023-landing/quantaa-full-landing-reference.png");
+      background-size: contain;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-color: #02040a;
+      position: relative;
+    }
+
+    .overlay-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      height: 82px;
+      background: rgba(2, 4, 10, 0.08);
+    }
+
+    .nav-links {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 34px;
+      pointer-events: none;
+    }
+
+    .nav-links a,
+    .get-started {
+      pointer-events: auto;
+      color: transparent;
+      text-decoration: none;
+      display: block;
+      height: 44px;
+    }
+
+    .nav-links a {
+      width: 92px;
+    }
+
+    .get-started {
+      position: fixed;
+      right: 36px;
+      top: 18px;
+      z-index: 11;
+      width: 170px;
+      height: 48px;
+      border-radius: 999px;
+    }
+
+    .brand-home {
+      position: fixed;
+      left: 70px;
+      top: 24px;
+      z-index: 11;
+      width: 290px;
+      height: 42px;
+      display: block;
+      color: transparent;
+      text-decoration: none;
+    }
+
+    .hero-link {
+      position: absolute;
+      left: 13.5%;
+      top: 48%;
+      width: 245px;
+      height: 64px;
+      border-radius: 999px;
+      display: block;
+      color: transparent;
+      text-decoration: none;
+    }
+
+    .fallback-content {
+      position: absolute;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+
+    @media (max-width: 900px) {
+      .landing {
+        background-size: auto 100vh;
+        background-position: center top;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .brand-home {
+        left: 24px;
+        width: 230px;
+      }
+
+      .get-started {
+        right: 20px;
+        width: 132px;
+      }
+
+      .hero-link {
+        left: 10%;
+        top: 51%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="landing">
+    <a class="brand-home" href="index.html" aria-label="Quantaa.net home">Quantaa.net</a>
+
+    <nav class="overlay-nav" aria-label="Primary navigation">
+      <div class="nav-links">
+        <a href="about.html">About</a>
+        <a href="about.html#solutions">Solutions</a>
+        <a href="about.html#technology">Technology</a>
+        <a href="about.html#industries">Industries</a>
+        <a href="about.html#careers">Careers</a>
+        <a href="about.html#contact">Contact</a>
+      </div>
+    </nav>
+
+    <a class="get-started" href="about.html#contact">Get Started</a>
+    <a class="hero-link" href="about.html">Explore Solutions</a>
+
+    <section class="fallback-content">
+      <h1>Compute. Intelligence. Innovation.</h1>
+      <p>Quantaa delivers cutting-edge AI solutions powered by advanced computing infrastructure and intelligent networking technologies.</p>
+    </section>
+  </main>
+</body>
+</html>

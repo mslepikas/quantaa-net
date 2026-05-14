@@ -2,29 +2,35 @@
 
 ## Current Version
 
-**v0.2.1-build001**
+**v0.3.0-build001**
 
 ## Status
 
-Serious sandbox homepage implementation.
+Sandbox approved visual build.
 
 ## Summary
 
-This version rebuilds the Quantaa.net homepage as real HTML/CSS following the approved dark futuristic style-guide direction.
+Clean professional Quantaa.net rebuild using the approved style-guide background direction, approved wordmark, approved service icons, and real HTML/CSS content sections.
 
-## Key Design Targets
+## Included
 
-- Black futuristic AI/cyber background
-- Quantaa.net wordmark in header
-- Blue/purple neon accent system
-- Large right-side Q artwork built in CSS
-- Star/network background feel
-- Left-side hero message:
-  - Compute.
-  - Intelligence.
-  - Innovation.
+- Professional header and footer
+- Site-wide approved style-guide background artwork
+- Hero section: AI Innovation in Compute & Networking
 - About Quantaa section
-- Three solution cards
-- Metrics strip
-- No screenshot/mockup background
-- No double-vision layout
+- Services cards with approved icons
+- Technology section
+- Contact section
+
+## Design Rules
+
+- No screenshot-only homepage
+- No unapproved Q hero asset
+- No fake CSS Q logo
+- No Unicode placeholder icons
+- No invisible hotspot navigation
+- Real webpage structure with real links and text
+
+## Deployment Status
+
+Ready for sandbox commit. GitHub/Cloudflare deployment requires separate approval.

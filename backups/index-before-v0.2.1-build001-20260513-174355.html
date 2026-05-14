@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quantaa.net | Compute Intelligence Innovation</title>
+  <meta name="description" content="Quantaa.net builds AI, compute, and intelligent networking systems for modern businesses.">
+
+  <style>
+    :root {
+      --bg: #03050a;
+      --bg-2: #060914;
+      --panel: rgba(255,255,255,0.045);
+      --panel-2: rgba(255,255,255,0.025);
+      --border: rgba(255,255,255,0.12);
+      --text: #ffffff;
+      --muted: rgba(255,255,255,0.70);
+      --muted-2: rgba(255,255,255,0.50);
+      --cyan: #00d4ff;
+      --blue: #0077ff;
+      --purple: #8a2be2;
+      --pink: #b12cff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -3;
+      background:
+        radial-gradient(circle at 18% 24%, rgba(0,119,255,0.16), transparent 28%),
+        radial-gradient(circle at 82% 20%, rgba(138,43,226,0.16), transparent 28%),
+        radial-gradient(circle at 50% 100%, rgba(0,212,255,0.07), transparent 34%),
+        linear-gradient(180deg, #02040a 0%, #05070d 52%, #02040a 100%);
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background-image:
+        radial-gradient(circle, rgba(0,119,255,0.85) 1px, transparent 1.5px),
+        radial-gradient(circle, rgba(138,43,226,0.55) 1px, transparent 1.5px);
+      background-size: 145px 145px, 210px 210px;
+      background-position: 30px 40px, 90px 80px;
+      opacity: 0.23;
+      pointer-events: none;
+    }
+
+    .container {
+      width: min(1260px, calc(100% - 56px));
+      margin: 0 auto;
+    }
+
+    header {
+      height: 82px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      z-index: 20;
+      background: rgba(2,4,10,0.82);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: #fff;
+      min-width: 230px;
+    }
+
+    .brand-word {
+      font-size: 30px;
+      letter-spacing: 0.14em;
+      font-weight: 400;
+      line-height: 1;
+      text-shadow: 0 0 22px rgba(255,255,255,0.10);
+    }
+
+    .brand-word .dotnet {
+      color: var(--blue);
+      background: linear-gradient(90deg, var(--blue), var(--purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    nav ul {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    nav a {
+      color: rgba(255,255,255,0.86);
+      text-decoration: none;
+      font-size: 15px;
+      letter-spacing: 0.025em;
+    }
+
+    nav a:hover {
+      color: var(--cyan);
+    }
+
+    .nav-cta {
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 999px;
+      border: 1px solid var(--cyan);
+      border-right-color: var(--purple);
+      border-bottom-color: var(--purple);
+      background: rgba(3,5,10,0.35);
+      box-shadow: 0 0 28px rgba(0,119,255,0.12);
+      white-space: nowrap;
+    }
+
+    .hero {
+      min-height: 500px;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      background:
+        linear-gradient(90deg, rgba(2,4,10,0.96) 0%, rgba(2,4,10,0.78) 42%, rgba(2,4,10,0.48) 100%);
+    }
+
+    .hero-network {
+      position: absolute;
+      inset: 0;
+      opacity: 0.42;
+      pointer-events: none;
+      background:
+        linear-gradient(30deg, transparent 0 48%, rgba(0,119,255,0.12) 49%, transparent 50%),
+        linear-gradient(150deg, transparent 0 52%, rgba(138,43,226,0.12) 53%, transparent 54%);
+      background-size: 180px 180px, 220px 220px;
+      mask-image: radial-gradient(circle at 50% 50%, black 20%, transparent 78%);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: min(43vw, 570px);
+      aspect-ratio: 1 / 1;
+      right: 9vw;
+      top: 32px;
+      border-radius: 50%;
+      background:
+        repeating-radial-gradient(
+          circle,
+          transparent 0 11px,
+          rgba(0,119,255,0.50) 12px,
+          rgba(0,119,255,0.50) 13px,
+          transparent 14px 21px
+        );
+      box-shadow:
+        0 0 60px rgba(0,119,255,0.22),
+        0 0 100px rgba(138,43,226,0.18);
+      opacity: 0.80;
+      filter: saturate(1.2);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: 11.5vw;
+      top: 250px;
+      width: min(18vw, 260px);
+      height: min(9vw, 130px);
+      transform: skew(26deg) rotate(0deg);
+      background:
+        repeating-linear-gradient(
+          90deg,
+          rgba(0,212,255,0.90) 0 2px,
+          transparent 2px 8px
+        );
+      box-shadow:
+        0 0 28px rgba(0,212,255,0.28),
+        0 0 48px rgba(138,43,226,0.22);
+      opacity: 0.90;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: min(520px, 100%);
+      padding: 98px 0 82px;
+    }
+
+    h1 {
+      margin: 0 0 26px;
+      font-size: clamp(42px, 5.5vw, 72px);
+      line-height: 1.08;
+      font-weight: 400;
+      letter-spacing: 0.055em;
+    }
+
+    h1 span {
+      display: block;
+    }
+
+    .line-white {
+      color: #ffffff;
+      text-shadow: 0 0 18px rgba(255,255,255,0.16);
+    }
+
+    .line-blue {
+      color: var(--blue);
+      text-shadow: 0 0 24px rgba(0,119,255,0.36);
+    }
+
+    .line-purple {
+      color: var(--purple);
+      text-shadow: 0 0 24px rgba(138,43,226,0.36);
+    }
+
+    .hero p {
+      margin: 0 0 34px;
+      max-width: 500px;
+      color: rgba(255,255,255,0.80);
+      font-size: 17px;
+      line-height: 1.75;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      color: #fff;
+      text-decoration: none;
+      border: 1px solid var(--cyan);
+      border-right-color: var(--purple);
+      border-bottom-color: var(--purple);
+      border-radius: 999px;
+      padding: 14px 30px;
+      background: rgba(2,4,10,0.44);
+      box-shadow: 0 0 32px rgba(0,119,255,0.12);
+    }
+
+    .main {
+      padding: 42px 0 58px;
+      background:
+        linear-gradient(180deg, rgba(2,4,10,0.82), rgba(2,4,10,0.98));
+    }
+
+    .overview {
+      display: grid;
+      grid-template-columns: 1fr 1.65fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: var(--cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      margin: 0 0 22px;
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.22;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+    }
+
+    .about-text {
+      margin: 0;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.75;
+      font-size: 16px;
+      max-width: 480px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      min-height: 220px;
+      padding: 34px 24px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: rgba(255,255,255,0.034);
+      text-align: center;
+      box-shadow:
+        0 0 40px rgba(0,0,0,0.24),
+        inset 0 1px 0 rgba(255,255,255,0.04);
+    }
+
+    .card-icon {
+      width: 58px;
+      height: 58px;
+      margin: 0 auto 24px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(0,212,255,0.42);
+      border-radius: 14px;
+      color: var(--cyan);
+      font-size: 28px;
+      box-shadow:
+        inset 0 0 24px rgba(0,119,255,0.16),
+        0 0 20px rgba(0,119,255,0.08);
+    }
+
+    .card:nth-child(2) .card-icon {
+      color: var(--purple);
+      border-color: rgba(138,43,226,0.50);
+    }
+
+    .card:nth-child(3) .card-icon {
+      color: var(--blue);
+      border-color: rgba(0,119,255,0.50);
+    }
+
+    .card h3 {
+      margin: 0 0 14px;
+      font-size: 17px;
+      font-weight: 500;
+    }
+
+    .card p {
+      margin: 0;
+      color: rgba(255,255,255,0.66);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+
+    .stats {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: rgba(255,255,255,0.032);
+      overflow: hidden;
+      box-shadow: 0 0 40px rgba(0,0,0,0.22);
+    }
+
+    .stat {
+      padding: 28px 18px;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.09);
+    }
+
+    .stat:last-child {
+      border-right: 0;
+    }
+
+    .number {
+      margin-bottom: 8px;
+      font-size: 38px;
+      line-height: 1;
+      background: linear-gradient(90deg, var(--cyan), var(--blue), var(--purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .label {
+      color: rgba(255,255,255,0.72);
+      font-size: 13px;
+    }
+
+    footer {
+      padding: 26px 0;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      background: #02040a;
+      color: rgba(255,255,255,0.48);
+      text-align: center;
+      font-size: 14px;
+    }
+
+    @media (max-width: 980px) {
+      nav ul {
+        display: none;
+      }
+
+      .brand-word {
+        font-size: 24px;
+      }
+
+      .hero::before {
+        width: 520px;
+        right: -180px;
+        opacity: 0.36;
+      }
+
+      .hero::after {
+        right: -20px;
+        top: 280px;
+        opacity: 0.35;
+      }
+
+      .overview {
+        grid-template-columns: 1fr;
+      }
+
+      .cards,
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .stat {
+        border-right: 0;
+        border-bottom: 1px solid rgba(255,255,255,0.09);
+      }
+
+      .stat:last-child {
+        border-bottom: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="/" aria-label="Quantaa.net home">
+        <div class="brand-word">quantaa<span class="dotnet">.net</span></div>
+      </a>
+
+      <nav aria-label="Primary navigation">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#solutions">Solutions</a></li>
+          <li><a href="#technology">Technology</a></li>
+          <li><a href="#industries">Industries</a></li>
+          <li><a href="#careers">Careers</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a class="nav-cta" href="#contact">Get Started →</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-network"></div>
+
+    <div class="container">
+      <div class="hero-content">
+        <h1>
+          <span class="line-white">Compute.</span>
+          <span class="line-blue">Intelligence.</span>
+          <span class="line-purple">Innovation.</span>
+        </h1>
+
+        <p>
+          Quantaa delivers cutting-edge AI solutions powered by advanced
+          computing infrastructure and intelligent networking technologies.
+        </p>
+
+        <a class="button" href="#solutions">Explore Solutions →</a>
+      </div>
+    </div>
+  </section>
+
+  <main class="main">
+    <div class="container overview">
+      <section id="about">
+        <div class="eyebrow">About Quantaa</div>
+        <h2>Pioneering the Future<br>of AI Infrastructure</h2>
+        <p class="about-text">
+          At Quantaa, we build the intelligent foundation for tomorrow.
+          Our advanced computing and networking solutions empower businesses
+          to unlock the full potential of their data.
+        </p>
+      </section>
+
+      <section class="cards" id="solutions">
+        <article class="card">
+          <div class="card-icon">▣</div>
+          <h3>Advanced Compute</h3>
+          <p>High-performance infrastructure designed for AI workloads at scale.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">⌬</div>
+          <h3>Intelligent Networking</h3>
+          <p>Low-latency, high-throughput networks optimized for the future.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">◌</div>
+          <h3>AI Innovation</h3>
+          <p>Innovative AI solutions that drive real-world business outcomes.</p>
+        </article>
+      </section>
+    </div>
+
+    <div class="container">
+      <section class="stats" aria-label="Quantaa metrics">
+        <div class="stat">
+          <div class="number">10+</div>
+          <div class="label">Years of Innovation</div>
+        </div>
+
+        <div class="stat">
+          <div class="number">500+</div>
+          <div class="label">Enterprise Clients</div>
+        </div>
+
+        <div class="stat">
+          <div class="number">99.99%</div>
+          <div class="label">Uptime Reliability</div>
+        </div>
+
+        <div class="stat">
+          <div class="number">24/7</div>
+          <div class="label">Expert Support</div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer id="contact">
+    <div class="container">
+      © 2026 Quantaa.net. Compute • Intelligence • Innovation.
+    </div>
+  </footer>
+</body>
+</html>
